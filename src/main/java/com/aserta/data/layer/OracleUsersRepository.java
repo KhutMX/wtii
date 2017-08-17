@@ -10,11 +10,11 @@ import com.aserta.business.entities.UserSignIn;
 import com.aserta.business.entities.UserSignUp;
 import com.aserta.data.interfaces.IUsersRepository;
 
-public class SqlServerUsersRepository implements IUsersRepository {
+public class OracleUsersRepository implements IUsersRepository {
 
 	private JdbcTemplate jdbcTemplate;
 
-	public SqlServerUsersRepository(DataSource dataSource) {
+	public OracleUsersRepository(DataSource dataSource) {
 		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
