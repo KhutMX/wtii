@@ -2,8 +2,8 @@ package com.aserta.business.layer;
 
 import static org.junit.Assert.assertEquals;
 
-import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Calendar;
 
 import javax.validation.ValidationException;
 
@@ -26,7 +26,9 @@ public class UserSignUpServiceTests {
 		userSignUp.setFullname("Francisco Javier Banos Lemoine");
 		userSignUp.setPassword("T0p5ecr3t");
 		userSignUp.setConfirmPassword("T0p5ecr3t");
-		userSignUp.setBirthdate(LocalDate.of(1962, 10, 10));
+		Calendar cal=Calendar.getInstance();
+		cal.set(1980, 10, 27);
+		userSignUp.setBirthdate(cal.getTime());
 	}
 	
 	private static final int MAX_EMAIL_LENGTH = 60;

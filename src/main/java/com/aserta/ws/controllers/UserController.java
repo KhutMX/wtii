@@ -1,5 +1,8 @@
 package com.aserta.ws.controllers;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +30,17 @@ public class UserController {
 		int userId = userSignUpService.execute(userSignUp);
 		return new ResponseEntity<Integer>(userId, HttpStatus.OK);
 	
+	}
+	
+
+	@RequestMapping(path="ws/fecha")
+	public Date getFecha() {
+		Calendar cal = Calendar.getInstance();
+		cal.set(1960, 10, 10);
+		System.out.println(cal.get(Calendar.YEAR));
+		System.out.println(cal.get(Calendar.MONTH));
+		System.out.println(cal.get(Calendar.DAY_OF_MONTH));
+		return cal.getTime();
 	}
 	
 }
